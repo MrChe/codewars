@@ -12,5 +12,3 @@ function isDivisible(){
 }
 
 
-console.log(isDivisible(12,7));
-console.log(isDivisible(100,5,4,10,25,20));
