@@ -12,3 +12,11 @@ def remove_smallest(numbers):
     index = numbers.index(smallest)
     numbers.pop(index)
     return numbers
+
+# alernatively:
+
+def remove_smallest(numbers):
+    if not numbers:
+        return []
+    numbers.remove(min(numbers))
+    return numbers
