@@ -16,3 +16,12 @@ function XO(str) {
   }
   return xCount === oCount;
 }
+
+// alternatively:
+
+function XO(str) {
+  var xCount = str.replace(/o/gi, "").length;
+  var oCount = str.replace(/x/gi, "").length;
+
+  return xCount === oCount;
+}
