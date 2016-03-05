@@ -16,3 +16,14 @@ String.prototype.toJadenCase = function () {
   }
   return words.join(" ");
 }
+
+// alternatively:
+
+String.prototype.toJadenCase = function () {
+  var words = this.split(" ");
+
+  function capitalizeFirstLetter(string) {
+      return string[0].toUpperCase() + string.slice(1);
+  }
+  return words.map(capitalizeFirstLetter).join(" ");
+};
