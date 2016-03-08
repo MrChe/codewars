@@ -24,3 +24,18 @@ def title_case(title, minor_words=''):
             title_cased_words.append(word)
 
     return " ".join(title_cased_words)
+
+# refactored:
+
+def title_case(title, minor_words=''):
+    title = title.capitalize().split()
+    minor_words = minor_words.lower().split()
+    title_cased_words = []
+
+    for word in title:
+        if word in minor_words:
+            title_cased_words.append(word)
+        else:
+            title_cased_words.append(word.capitalize())
+
+    return ' '.join(title_cased_words)
