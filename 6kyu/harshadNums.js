@@ -26,11 +26,63 @@ You do not need to care about the passed parameters in the test cases,
 they will always be valid integers between 0 and 2000 (except for the start
 argument in getSerie() which is optional and should default to 0). */
 
+/**
+ * Utility class for Harshad numbers (also called Niven numbers).
+ */
+var HarshadV2 = ( function() {
+  'use strict';
+
+  return {
+    /**
+     * Returns true when the given number is a valid Harshad number.
+     */
+    isValid: function( number ) {
+       var numString = String(number);
+       var digitSum = numString.split('').reduce(function(prev, current) {
+          return parseInt(prev) + parseInt(current);
+       }, 0);
+
+       return (number % digitSum === 0);
+
+    },
+    /**
+     * Gets the next Harshad number after the given number.
+     */
+    getNext: function( number ) {
+      number++;
+
+      while (true) {
+        if (this.isValid(number)) {
+        return number;
+        }
+        number++;
+      }
+    },
+    /**
+     * Returns the suite of Harshad numbers, starting after a given number.
+     */
+    getSerie: function( count, start ) {
+      var harshadNums = [];
+      if (!start) {
+        start = 0
+      }
+
+      while (harshadNums.length < count) {
+        var next = this.getNext(start);
+        harshadNums.push(next);
+        start = next;
+      }
+      return harshadNums;
+    }
+  };
+
+} () );
+
+
+
 
 /**
  * Utility class for Harshad numbers (also called Niven numbers).
- *
- * @namespace Harshad
  */
 var Harshad = ( function() {
   'use strict';
