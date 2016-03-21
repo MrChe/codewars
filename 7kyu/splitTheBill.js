@@ -13,18 +13,18 @@ the group, negative numbers if they owe money to the group.
 If value is a decimal, round to two decimal places. */
 
 function splitTheBill(x) {
-    var total = 0;
-    var each, moniesOwed = {};
+  var total = 0;
+  var each, moniesOwed = {};
 
-    for (var i in x) {
-      total += x[i];
-    }
+  for (var i in x) {
+    total += x[i];
+  }
 
-    each = total / Object.keys(x).length;
+  each = total / Object.keys(x).length;
 
-    for (var i in x) {
-      moniesOwed[i] = parseFloat((x[i] - each).toFixed(2));
-    }
+  for (var i in x) {
+    moniesOwed[i] = parseFloat((x[i] - each).toFixed(2));
+  }
 
-    return moniesOwed;
+  return moniesOwed;
 }
