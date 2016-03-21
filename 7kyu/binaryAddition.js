@@ -5,5 +5,5 @@
 
 function addBinary(a,b){
     var sum = a + b;
-    return Number(sum).toString(2)
+    return Number(sum).toString(2);
 }

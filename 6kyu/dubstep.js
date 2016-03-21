@@ -20,7 +20,7 @@ Output
 Return the words of the initial song that Polycarpus used to make a dubsteb remix.
 Separate the words with a space. */
 
-function songDecoder(song){
+function songDecoder(song) {
   var original_song = song.replace(/(WUB)+/g, " ");
   return original_song.trim();
 }

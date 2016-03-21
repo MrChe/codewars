@@ -6,13 +6,13 @@ As an example, if the input was “I like racecars that go fast”, the substrin
 If the length of the input string is 0, return value must be 0. */
 
 
-longestPalindrome = function(s){
+longestPalindrome = function(s) {
   if (!s) {
     return 0;
   }
   var substrings = getAllSubstrings(s);
 
-  var palindromes = substrings.filter(function(string){
+  var palindromes = substrings.filter(function(string) {
     return string === string.split("").reverse().join("");
   });
 
@@ -27,7 +27,7 @@ longestPalindrome = function(s){
 function getAllSubstrings(s) {
   var substrings = [];
 
-  for (var i = 0; i < s.length; i++){
+  for (var i = 0; i < s.length; i++) {
     for (var j = i + 1; j < s.length + 1; j++) {
       var string = s.slice(i, j);
       substrings.push(string);

@@ -6,12 +6,12 @@ For example:
 uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']  */
 
 
-var uniqueInOrder= function(iterable){
+var uniqueInOrder= function(iterable) {
   var uniqueArray = [];
 
-  for (var i = 0; i < iterable.length; i++){
-    if (iterable[i] != iterable[i -1]){
-      uniqueArray.push(iterable[i])
+  for (var i = 0; i < iterable.length; i++) {
+    if (iterable[i] !== iterable[i - 1]) {
+      uniqueArray.push(iterable[i]);
     }
   }
   return uniqueArray;
