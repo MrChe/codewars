@@ -13,5 +13,10 @@ def is_isogram(string):
     for char in string:
         if char.lower() in histo:
             return False;
-        histo[char] = True;
+        histo[char.lower()] = True;
     return True;
+
+## alternatively:
+
+def is_isogram(string):
+    return len(string.lower()) == len(set(string.lower()))
